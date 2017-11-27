@@ -8,8 +8,8 @@ import java.util.Scanner;
  */
 /**
  *
- * @Description This program demonstrates Newton's method. (Only works with
- * polynomials)
+ * @Description This program demonstrates Newton's method. 
+ * 
  */
 public class NewtonsMethod {
     public static void main(String[] args) {
@@ -22,6 +22,7 @@ public class NewtonsMethod {
         System.out.println("How many terms are in the function?");
         expressions = new Term[scan.nextInt()];
         scan.nextLine();
+        //Gets each term of the function from the user
         for (int i = 0; i < expressions.length; i++) {
             expressions[i] = new Term(0,0,0);
             System.out.println("Enter the constant");
@@ -33,6 +34,7 @@ public class NewtonsMethod {
         }
         System.out.println("How many terms are in the derivative");
         derivatives = new Term[scan.nextInt()];
+        //Gets each term of the derivative from the user
         for (int k = 0; k < derivatives.length; k++) {
             derivatives[k] = new Term(0,0,0);//initializes the object
             System.out.println("Enter the constant");
@@ -42,8 +44,10 @@ public class NewtonsMethod {
             System.out.println("Enter b");
             derivatives[k].setB(scan.nextDouble());
         }
+        //Gets x0 from the user
         System.out.println("Enter the first guess");
         initialGuess = scan.nextDouble();
+        //
         System.out.println("Enter how many iterations");
         iterations = scan.nextInt();
         newtonsMethod(expressions,derivatives,initialGuess,iterations);
